@@ -1,0 +1,30 @@
+<h1>PÁGINA PRINCIPAL DE FAMILIARES</h1>
+<button (click)="addFamiliar()">addFamiliar</button>
+<button (click)="removeFamiliar()">removeFamiliar</button>
+
+<input type="text" [(ngModel)]="txtValor">
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Dni</th>
+        <th>Apellidos</th>
+        <th>Nombres</th>
+        <th>Celular</th>
+        <th>Direccion</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let familia of familiares">
+        <td>{{ familia.tipo }}</td>
+        <td>{{ familia.dni }}</td>
+        <td>{{ familia.apellido }}</td>
+        <td>{{ familia.nombre }}</td>
+        <td>{{ familia.celular }}</td>
+        <td>{{ familia.direccion }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2>El valor del texto es: {{txtValor}}</h2>

@@ -1,0 +1,46 @@
+<h1>PÁGINA PRINCIPAL DE PAGOS</h1>
+<button (click)="addPago()">addPago</button>
+<button (click)="removePago()">removePago</button>
+
+<input type="text" [(ngModel)]="txtValor">
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Dni</th>
+        <th>Apellidos</th>
+        <th>Nombres</th>
+        <th>Mat</th>
+        <th>Mar</th>
+        <th>Abr</th>
+        <th>May</th>
+        <th>Jun</th>
+        <th>Jul</th>
+        <th>Ago</th>
+        <th>Set</th>
+        <th>Oct</th>
+        <th>Nov</th>
+        <th>Dic</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pago of pagos">
+        <td>{{ pago.dni }}</td>
+        <td>{{ pago.apellido }}</td>
+        <td>{{ pago.nombre }}</td>
+        <td>{{ pago.matricula }}</td>
+        <td>{{ pago.marzo }}</td>
+        <td>{{ pago.abril }}</td>
+        <td>{{ pago.mayo }}</td>
+        <td>{{ pago.junio }}</td>
+        <td>{{ pago.julio }}</td>
+        <td>{{ pago.agosto }}</td>
+        <td>{{ pago.setiembre }}</td>
+        <td>{{ pago.octubre }}</td>
+        <td>{{ pago.noviembre }}</td>
+        <td>{{ pago.diciembre }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2>El valor del texto es: {{txtValor}}</h2>

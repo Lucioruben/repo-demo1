@@ -1,0 +1,32 @@
+<h1>PÁGINA PRINCIPAL DE ESTUDIANTES</h1>
+<button (click)="addEstudiante()">addEstudiante</button>
+<button (click)="removeEstudiante()">removeEstudiante</button>
+
+<input type="text" [(ngModel)]="txtValor">
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Dni</th>
+        <th>Apellidos</th>
+        <th>Nombres</th>
+        <th>Genero</th>
+        <th>Nivel</th>
+        <th>Grado</th>
+        <th>Seccion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estudiante of estudiantes">
+        <td>{{ estudiante.dni }}</td>
+        <td>{{ estudiante.apellido }}</td>
+        <td>{{ estudiante.nombre }}</td>
+        <td>{{ estudiante.genero }}</td>
+        <td>{{ estudiante.nivel }}</td>
+        <td>{{ estudiante.grado }}</td>
+        <td>{{ estudiante.seccion }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2>El valor del texto es: {{txtValor}}</h2>

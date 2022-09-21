@@ -1,0 +1,34 @@
+<h1>PÁGINA PRINCIPAL DE NOTAS</h1>
+<button (click)="addNota()">addNota</button>
+<button (click)="removeNota()">removeNota</button>
+
+<input type="text" [(ngModel)]="txtValor">
+
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Bimestre</th>
+        <th>Apellidos</th>
+        <th>Nombres</th>
+        <th>Competencia 1</th>
+        <th>Competencia 2</th>
+        <th>Competencia 3</th>
+        <th>Competencia 4</th>
+        <th>Promedio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let nota of notas">
+        <td>{{ nota.bimestre }}</td>
+        <td>{{ nota.apellido }}</td>
+        <td>{{ nota.nombre }}</td>
+        <td>{{ nota.competencia1 }}</td>
+        <td>{{ nota.competencia2 }}</td>
+        <td>{{ nota.competencia3 }}</td>
+        <td>{{ nota.competencia4 }}</td>
+        <td>{{ nota.promedio }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2>El valor del texto es: {{txtValor}}</h2>
